@@ -9,8 +9,8 @@ metadata {
         capability "Sensor"
         capability "Configuration"
         
-        command "childOn"
-        command "childOff"
+        //command "childOn"
+        //command "childOff"
         command "recreateChildDevices"
         command "deleteChildren"
         
@@ -128,24 +128,25 @@ def updated() {
 def configure() {
     log.debug "Executing 'configure'"
    
-   delayBetween([
-                   
-                   zwave.configurationV1.configurationSet(parameterNumber:1, configurationValue:[param1.value]).format(),            
-                   zwave.configurationV1.configurationSet(parameterNumber:2, configurationValue:[param2.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:3, configurationValue:[param3.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:4, configurationValue:[param4.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:5, configurationValue:[param5.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:6, configurationValue:[param6.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:7, configurationValue:[param7.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:9, configurationValue:[param9.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:10, configurationValue:[param10.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:11, configurationValue:[param11.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:12, configurationValue:[param12.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:13, configurationValue:[param13.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:14, configurationValue:[param14.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:15, configurationValue:[param15.value]).format(),
-                   zwave.configurationV1.configurationSet(parameterNumber:16, configurationValue:[param16.value]).format()
-               ])
+    def cmds = []
+   
+                     
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:1, scaledConfigurationValue: param1.value, size: 1).format()            
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:2, scaledConfigurationValue: param2.value, size: 2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:3, scaledConfigurationValue: param3.value, size:2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:4, scaledConfigurationValue: param4.value, size: 2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:5, scaledConfigurationValue: param5.value, size: 2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:6, scaledConfigurationValue: param6.value, size: 2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:7, scaledConfigurationValue: param7.value, size: 1).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:9, scaledConfigurationValue: param9.value, size: 1).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:10, scaledConfigurationValue: param10.value, size: 1).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:11, scaledConfigurationValue: param11.value, size: 2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:12, scaledConfigurationValue: param12.value, size: 2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:13, scaledConfigurationValue: param13.value, size: 2).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:14, scaledConfigurationValue: param14.value, size: 1).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:15, scaledConfigurationValue: param15.value, size: 1).format()
+                   cmds += zwave.configurationV1.configurationSet(parameterNumber:16, scaledConfigurationValue: param16.value, size: 1).format()
+    return  delayBetween(cmds, 500)
 }
     
 
