@@ -10,7 +10,7 @@ Instructions - The Mfr fingerprint method seems to cause Hubitat to hang at "ini
 2. Include your ZConnect module as a generic device - at this point check to see that secure inclusion has been successful.
 3. Select ZConnect Garage Door Control as your new driver, then save.
 4. Click Create Child Devices, rename them to anything you like.
-5.Set whatever parameters you need to.
+5.Set whatever parameters you need to. Use "Save Preferences" to update, not "configure" button.
 
 As per the manual, located here https://www.smartliving.com.au/pub/media/productattach/s/m/smart_living_zconnect_z-wave_garage_door_manual.pdf R1 is setup for momentary actuation (for door control) and R2 operates as a normal relay. S1 can be used for an IR safety beam and S2 for a door position switch.
 
