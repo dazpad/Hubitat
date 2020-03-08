@@ -9,15 +9,15 @@ metadata {
         capability "Sensor"
         capability "Configuration"
         
-        //command "childOn"
-        //command "childOff"
+        command "childOn"
+        command "childOff"
         command "recreateChildDevices"
         command "deleteChildren"
         
         attribute "childswitch", "string"
 
-        //fingerprint mfr:"024E", prod:"0021", model:"0014", deviceJoinName: "ZConnect Garage Door Controller"
-        //fingerprint deviceId: "0x8700", inClusters: "0x5E,0x27,0x25,0x86,0x73,0x85,0x59,0x8E,0x60,0x70,0x72,0x7A,0x98,0x5A"
+        fingerprint mfr:"024E", prod:"0021", model:"0014", deviceJoinName: "ZConnect Garage Door Controller"
+        fingerprint deviceId: "0x8700", inClusters: "0x5E,0x27,0x25,0x86,0x73,0x85,0x59,0x8E,0x60,0x70,0x72,0x7A,0x98,0x5A"
    }
     preferences {
         
