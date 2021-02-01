@@ -380,3 +380,13 @@ private void createChildDevices() {
 	        cmd.format()
 	    }
 	}
+def logsOff(){
+log.warn "debug logging disabled..."
+device.updateSetting("debugOutput",[value:"false",type:"bool"])
+}
+
+private logDebug(msg) {
+if (settings?.debugOutput || settings?.debugOutput == null) {
+log.debug "$msg"
+}
+}
