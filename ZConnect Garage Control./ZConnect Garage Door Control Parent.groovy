@@ -20,6 +20,8 @@ metadata {
         fingerprint deviceId: "0x8700", inClusters: "0x5E,0x27,0x25,0x86,0x73,0x85,0x59,0x8E,0x60,0x70,0x72,0x7A,0x98,0x5A"
    }
     preferences {
+	    
+	Input name: "debugOutput, type: "bool", title: "Enable debug logging?", defaultValue: true   
         
         input name: "param1", type: "number", defaultValue: "0", required: true,
             title: "Parameter No. 1 - Relay 1 Mode Selection ([0] Normal, [1] Reverse and [2] Strobe)." + "Default value: 0."               
@@ -109,6 +111,9 @@ def installed() {
 
 def updated() {
     log.debug "updated"
+	
+	unschedule()
+	if (debugOutput) runIn(1800, lofsOff)
     
     if (!childDevices) {
         createChildDevices()
