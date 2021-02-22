@@ -21,7 +21,7 @@ metadata {
    }
     preferences {
 	    
-	Input name: "debugOutput, type: "bool", title: "Enable debug logging?", defaultValue: true   
+	Input name: "debugOutput", type: "bool", title: "Enable debug logging?", defaultValue: true   
         
         input name: "param1", type: "number", defaultValue: "0", required: true,
             title: "Parameter No. 1 - Relay 1 Mode Selection ([0] Normal, [1] Reverse and [2] Strobe)." + "Default value: 0."               
