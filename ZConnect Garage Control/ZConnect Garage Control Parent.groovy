@@ -341,13 +341,13 @@ def configure() {
     def cmds = []
    
     if (param1) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:1, scaledConfigurationValue: param1, size: 1).format()            
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:1, scaledConfigurationValue: param1.toInteger(), size: 1).format()            
     }
     if (param2) {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:2, scaledConfigurationValue: param2.value, size: 2).format()
     }
     if (param3) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:3, scaledConfigurationValue: param3.value, size:2).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:3, scaledConfigurationValue: param3.value, size: 2).format()
     }
     if (param4) {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:4, scaledConfigurationValue: param4.value, size: 2).format()
@@ -359,16 +359,16 @@ def configure() {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:6, scaledConfigurationValue: param6.value, size: 2).format()
     }
     if (param7) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:7, scaledConfigurationValue: param7, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:7, scaledConfigurationValue: param7.toInteger(), size: 1).format()
     }
     if (param8) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:8, scaledConfigurationValue: param8, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:8, scaledConfigurationValue: param8.toInteger(), size: 1).format()
     }
     if (param9) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:9, scaledConfigurationValue: param9, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:9, scaledConfigurationValue: param9.toInteger(), size: 1).format()
     }
     if (param10) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:10, scaledConfigurationValue: param10, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:10, scaledConfigurationValue: param10.toInteger(), size: 1).format()
     }
     if (param11) {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:11, scaledConfigurationValue: param11.value, size: 2).format()
@@ -380,28 +380,28 @@ def configure() {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:13, scaledConfigurationValue: param13.value, size: 2).format()
     }
     if (param14) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:14, scaledConfigurationValue: param14, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:14, scaledConfigurationValue: param14.toInteger(), size: 1).format()
     }
     if (param15) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:15, scaledConfigurationValue: param15, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:15, scaledConfigurationValue: param15.toInteger(), size: 1).format()
     }
     if (param16) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:16, scaledConfigurationValue: param16, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:16, scaledConfigurationValue: param16.toInteger(), size: 1).format()
     }
     if (param20) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:20, scaledConfigurationValue: param20, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:20, scaledConfigurationValue: param20.toInteger(), size: 1).format()
     }
     if (param21) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:21, scaledConfigurationValue: param21, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:21, scaledConfigurationValue: param21.toInteger(), size: 1).format()
     }
     if (param24) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:24, scaledConfigurationValue: param24, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:24, scaledConfigurationValue: param24.toInteger(), size: 1).format()
     }
     if (param26) {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:26, scaledConfigurationValue: param26.value, size: 2).format()
     }
     if (param29) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:29, scaledConfigurationValue: param29, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:29, scaledConfigurationValue: param29.toInteger(), size: 1).format()
     }
     if (param31) {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:31, scaledConfigurationValue: param31.value, size: 2).format()
@@ -413,7 +413,7 @@ def configure() {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:33, scaledConfigurationValue: param33.value, size: 2).format()
     }
     if (param34) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:34, scaledConfigurationValue: param34, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:34, scaledConfigurationValue: param34.toInteger(), size: 1).format()
     }
     //if (param35) {
     //    cmds += zwave.configurationV1.configurationSet(parameterNumber:35, scaledConfigurationValue: param35.value, size: 2).format()
@@ -428,7 +428,7 @@ def configure() {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:38, scaledConfigurationValue: param38.value, size: 2).format()
     }
     if (param39) {
-        cmds += zwave.configurationV1.configurationSet(parameterNumber:39, scaledConfigurationValue: param39, size: 1).format()
+        cmds += zwave.configurationV1.configurationSet(parameterNumber:39, scaledConfigurationValue: param39.toInteger(), size: 1).format()
     }
     //if (param40) {
     //    cmds += zwave.configurationV1.configurationSet(parameterNumber:40, scaledConfigurationValue: param40.value, size: 2).format()
@@ -437,7 +437,7 @@ def configure() {
         cmds += zwave.configurationV1.configurationSet(parameterNumber:41, scaledConfigurationValue: param41.value, size: 2).format()
     }
 
-    return  delayBetween(cmds, 500)
+    return delayBetween(cmds, 500)
 }
     
 
